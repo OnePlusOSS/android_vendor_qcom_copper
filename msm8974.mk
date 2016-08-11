@@ -28,7 +28,13 @@ PRODUCT_COPY_FILES += \
     device/qcom/msm8974/audio_policy.conf:system/etc/audio_policy.conf \
     device/qcom/msm8974/audio_effects.conf:system/vendor/etc/audio_effects.conf \
     device/qcom/msm8974/mixer_paths.xml:system/etc/mixer_paths.xml \
-    device/qcom/msm8974/mixer_paths_auxpcm.xml:system/etc/mixer_paths_auxpcm.xml
+    device/qcom/msm8974/mixer_paths_auxpcm.xml:system/etc/mixer_paths_auxpcm.xml \
+    device/qcom/msm8974/tfa98xx.cnt:system/etc/firmware/tfa98xx.cnt
+
+ifneq ($(OEM_PRJ_CODE),15055)
+PRODUCT_COPY_FILES += \
+	vendor/oneplus/config/msm8974/mixer_paths_14001.xml:system/etc/mixer_paths.xml
+endif
 
 PRODUCT_PACKAGES += \
     libqcomvisualizer \
@@ -140,3 +146,5 @@ PRODUCT_BOOT_JARS += com.qti.dpmframework
 PRODUCT_BOOT_JARS += dpmapi
 PRODUCT_BOOT_JARS += com.qti.location.sdk
 endif
+
+$(call inherit-product-if-exists, device/qcom/msm8974/device-vendor.mk)

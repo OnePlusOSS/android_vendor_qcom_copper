@@ -110,9 +110,9 @@
 
     <EncoderProfile quality="high" fileFormat="mp4" duration="30">
       <Video codec="h264"
-             bitRate="42000000"
-             width="3840"
-             height="2160"
+             bitRate="20000000"
+             width="1920"
+             height="1080"
              frameRate="30" />
 
       <Audio codec="aac"
@@ -198,7 +198,7 @@
              sampleRate="48000"
              channels="2" />
     </EncoderProfile>
-
+<!--
     <EncoderProfile quality="4kdci" fileFormat="mp4" duration="30">
       <Video codec="h264"
             bitRate="42000000"
@@ -224,7 +224,7 @@
             sampleRate="48000"
             channels="2" />
     </EncoderProfile>
-
+-->
     <EncoderProfile quality="qcif" fileFormat="3gp" duration="30">
       <Video codec="h264"
              bitRate="192000"
@@ -280,9 +280,9 @@
 
     <EncoderProfile quality="timelapsehigh" fileFormat="mp4" duration="30">
       <Video codec="h264"
-             bitRate="42000000"
-             width="3840"
-             height="2160"
+             bitRate="20000000"
+             width="1920"
+             height="1080"
              frameRate="30" />
 
       <!-- audio setting is ignored -->
@@ -445,7 +445,7 @@
              sampleRate="48000"
              channels="2" />
     </EncoderProfile>
-
+<!--
     <EncoderProfile quality="timelapse2160p" fileFormat="mp4" duration="30">
       <Video codec="h264"
              bitRate="42000000"
@@ -458,7 +458,7 @@
             sampleRate="48000"
             channels="2" />
     </EncoderProfile>
-
+-->
     <!-- HIGH-SPEED profiles for back camera -->
 
     <EncoderProfile quality="highspeedcif" fileFormat="mp4" duration="30">

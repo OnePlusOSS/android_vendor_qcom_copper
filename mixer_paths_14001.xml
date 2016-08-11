@@ -964,7 +964,7 @@
         <ctl name="DEC4 MUX" value="ADC3" />
         <ctl name="ADC3 Volume" value="19" />
         <ctl name="DEC4 Volume" value="84" />
-	<ctl name="SLIM_0_RX Format" value="S16_LE" />
+		<ctl name="SLIM_0_RX Format" value="S16_LE" />
     </path>
 
     <path name="speaker">
@@ -1066,14 +1066,6 @@
         <ctl name="DAC1 Switch" value="1" />
         <ctl name="RX1 Digital Volume" value="84" />
     </path>
-    <path name="voip-handset">
-        <ctl name="SLIM RX1 MUX" value="AIF1_PB" />
-        <ctl name="SLIM_0_RX Channels" value="One" />
-        <ctl name="RX1 MIX1 INP1" value="RX1" />
-        <ctl name="CLASS_H_DSM MUX" value="DSM_HPHL_RX1" />
-        <ctl name="DAC1 Switch" value="1" />
-        <ctl name="RX1 Digital Volume" value="78" />
-    </path>
 
     <path name="handset-mic">
         <path name="dmic1" />
@@ -1103,11 +1095,10 @@
         <ctl name="RX1 MIX1 INP1" value="RX1" />
         <ctl name="RX2 MIX1 INP1" value="RX2" />
         <ctl name="CLASS_H_DSM MUX" value="DSM_HPHL_RX1" />
-        <ctl name="SLIM_0_RX Format" value="S24_LE" />
         <ctl name="HPHL DAC Switch" value="1" />
         <ctl name="COMP1 Switch" value="1" />
-        <ctl name="RX1 Digital Volume" value="81" />
-        <ctl name="RX2 Digital Volume" value="81" />
+        <ctl name="RX1 Digital Volume" value="72" />
+        <ctl name="RX2 Digital Volume" value="72" />
         <ctl name="HPHL Volume" value="20" />
         <ctl name="HPHR Volume" value="20" />
     </path>
@@ -1131,13 +1122,6 @@
         <path name="sidetone-handset" />
         <path name="handset" />
 	<!--wangdongdong@OnePlus.AudioDrv,2015/02/02,increase 5dB(84-89) of voice handset rx-->
-        <ctl name="RX1 Digital Volume" value="89" />
-    </path>
-
-    <path name="voice-handset-qosound">
-        <path name="sidetone-handset" />
-        <path name="handset" />
-	<!--lifei@OnePlus.AudioDrv,2015/08/25,increase 5dB(84-89) of voice handset rx-->
         <ctl name="RX1 Digital Volume" value="89" />
     </path>
 
@@ -1187,7 +1171,7 @@
         <ctl name="LINEOUT3 Volume" value="13" />
         <ctl name="RX3 Digital Volume" value="84" />
         <ctl name="RX4 Digital Volume" value="84" />
-        <ctl name="SPKR Enable" value="1" />
+      	<ctl name="SPKR Enable" value="1" />
     </path>
 
     <path name="speaker-and-headphones-fluid">
@@ -1398,6 +1382,14 @@
         <ctl name="SLIM_0_TX Channels" value="Two" />
 		<ctl name="SLIM_0_RX Format" value="S16_LE" />
     </path>
+	
+	<path name="speaker-smic-endfire">
+        <ctl name="AIF1_CAP Mixer SLIM TX8" value="1" />
+        <ctl name="SLIM TX8 MUX" value="DEC3" />
+        <ctl name="DEC3 MUX" value="ADC4" />
+        <ctl name="SLIM_0_TX Channels" value="One" />
+		<ctl name="SLIM_0_RX Format" value="S16_LE" />
+    </path>
 
     <path name="speaker-dmic-endfire-liquid">
         <ctl name="AIF1_CAP Mixer SLIM TX7" value="1" />
@@ -1428,10 +1420,8 @@
     </path>
 
 	<path name="voice-speaker-voip-mic">
-		<path name="speaker-dmic-endfire" />
+		<path name="speaker-smic-endfire" />
         <ctl name="DEC3 Volume" value="84" />
-        <ctl name="DEC4 Volume" value="78" />
-        <ctl name="ADC3 Volume" value="13" />
         <ctl name="ADC4 Volume" value="13" />
         <ctl name="left Profile" value="1"/>
     </path>
@@ -1473,12 +1463,12 @@
 
     <!--xiaojun.lv@phoneSW.AudioDrv,14001 handsfree call use ANC mic-->
     <path name="voice-speaker-dmic-ef">
-        <path name="speaker-dmic-endfire" />
-    	<ctl name="ADC3 Volume" value="8" />
-    	<ctl name="ADC4 Volume" value="12" />
-	    <ctl name="DEC3 Volume" value="84" />
-	    <ctl name="DEC4 Volume" value="84" />
-		<ctl name="left Profile" value="1"/>
+        <ctl name="AIF1_CAP Mixer SLIM TX7" value="1"/>
+        <ctl name="SLIM_0_TX Channels" value="One" />
+        <ctl name="SLIM TX7 MUX" value="DEC3" />
+        <ctl name="DEC3 MUX" value="ADC4" />
+        <ctl name="ADC4 Volume" value="19" />
+        <ctl name="DEC3 Volume" value="84" />
     </path>
 
     <path name="voice-rec-dmic-ef">
@@ -1620,7 +1610,9 @@
 
     <path name="listen-handset-mic">
         <ctl name="MADONOFF Switch" value="1" />
-        <ctl name="MAD Input" value="DMIC1" />
+        <!--ctl name="MAD Input" value="DMIC1" /-->
+	<ctl name="MAD Input" value="ADC3" />
+	<ctl name="ADC3 Volume" value="12" />	
     </path>
 
     <path name="voice-rx">
